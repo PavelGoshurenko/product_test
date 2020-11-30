@@ -1,10 +1,8 @@
 from rest_framework import generics
-from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
 from product_app.serializer import ProductSerializer
 from product_app.models import Product
 from rest_framework.exceptions import APIException
-from rest_framework.views import exception_handler
 
 
 class ChangindDenied(APIException):
@@ -12,9 +10,11 @@ class ChangindDenied(APIException):
     default_detail = 'You are not allowed to modify this product.'
     default_code = 'access_denied'
 
+
 class ProductCreateApi(generics.CreateAPIView):
     queryset = Product.objects.all()
-    serializer_class = ProductSerializer    
+    serializer_class = ProductSerializer
+
 
 class ProductApi(generics.ListAPIView):
     serializer_class = ProductSerializer

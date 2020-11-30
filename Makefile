@@ -1,16 +1,13 @@
 # Makefile
 
 lint:
-	python3 -m poetry run flake8
+	python3 -m flake8 product_app
 
 test:
 	python3 manage.py test
 	
 run:
 	python3 manage.py runserver
-
-requirements:
-	python3 -m poetry export -f requirements.txt -o requirements.txt
 
 migrations:
 	python3 manage.py makemigrations

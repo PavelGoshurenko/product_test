@@ -9,6 +9,7 @@ from product_app.serializer import ProductSerializer
 # initialize the APIClient app
 client = Client()
 
+
 class GetAllProductsTest(TestCase):
     """ Test module for GET all products API """
 
@@ -68,7 +69,7 @@ class CreateNewProductTest(TestCase):
             'description': 'This is toaster',
         }
         self.invalid_payload = {
-            'name': '', # should not be empty
+            'name': '',  # should not be empty
             'description': 'This is a mistake',
         }
 
@@ -103,7 +104,7 @@ class UpdateSingleProductTest(TestCase):
             'description': 'This is iPhone 12 !!!',
         }
         self.invalid_payload = {
-            'name': '', # should not be empty
+            'name': '',  # should not be empty
             'description': 'This is a mistake',
         }
 
@@ -137,10 +138,12 @@ class DeleteSingleProductTest(TestCase):
         response = client.delete(
             reverse('delete_product', kwargs={'pk': self.iphone.uuid}))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
     def test_invalid_delete_product(self):
         response = client.delete(
             reverse('delete_product', kwargs={'pk': 'wrong uuid'}))
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
 
 class Update2TimesTest(TestCase):
     """ Test module for not updating product more then one time """
@@ -159,7 +162,6 @@ class Update2TimesTest(TestCase):
             'name': 'iPhone 13',
             'description': 'This is iPhone 13 !!!',
         }
-
 
     def test_2_times_update(self):
         response = client.put(

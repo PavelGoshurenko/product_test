@@ -1,5 +1,9 @@
 from django.urls import path
-from product_app.api import ProductCreateApi, ProductApi, ProductUpdateApi, ProductDeleteApi, ProductRetrieveApi
+from product_app.api import ProductCreateApi
+from product_app.api import ProductApi
+from product_app.api import ProductUpdateApi
+from product_app.api import ProductDeleteApi
+from product_app.api import ProductRetrieveApi
 
 
 urlpatterns = [
