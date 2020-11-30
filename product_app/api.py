@@ -6,6 +6,7 @@ from product_app.models import Product
 from rest_framework.exceptions import APIException
 from rest_framework.views import exception_handler
 
+
 class ChangindDenied(APIException):
     status_code = 403
     default_detail = 'You are not allowed to modify this product.'
