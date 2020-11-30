@@ -10,7 +10,6 @@ class ProductSerializer(serializers.ModelSerializer):
         'uuid',
         'created_at',
         'updated',
-        'updated_at',
         'logo',
         'rotate_duration'
         )

@@ -28,3 +28,6 @@ class Product(models.Model):
         else:
             self.rotate_duration = 0
         super().save(*args, **kwargs)
+
+    class Meta:
+        ordering = ['-updated']

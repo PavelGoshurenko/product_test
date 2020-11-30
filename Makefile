@@ -1,13 +1,10 @@
 # Makefile
 
-install:
-	python3 -m poetry install
 lint:
 	python3 -m poetry run flake8
+
 test:
-	python3 -m poetry run coverage run --source='.' --omit '.venv/*' manage.py test
-	python3 -m poetry run coverage report
-	python3 -m poetry run coverage xml
+	python3 manage.py test
 	
 run:
 	python3 manage.py runserver
