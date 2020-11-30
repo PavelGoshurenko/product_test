@@ -5,4 +5,12 @@ from product_app.models import Product
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = ('name',
+        'description',
+        'uuid',
+        'created_at',
+        'updated',
+        'updated_at',
+        'logo',
+        'rotate_duration'
+        )
